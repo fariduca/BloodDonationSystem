@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,7 +8,8 @@ namespace Blood_Donation_System.Models
 {
     public class DonorsModel
     {
-        public string Id { get; set; }
+        [Key]
+        public int Id { get; set; }
 
         public string Name { get; set; }
 
