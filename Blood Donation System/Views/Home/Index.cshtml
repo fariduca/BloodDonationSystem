@@ -1,31 +1,123 @@
-﻿@{
+﻿@{  
     ViewData["Title"] = "Home Page";
 }
-<section class="hero-wrap" style="background-image: url('https://knowpathology.com.au/app/uploads/2019/01/Donating-Blood-min-825x510.jpeg'); background-position-y: -50px;" data-section="home" id="home-section">
-    <div class="container">
-        <div class="row" style="height: 360px;">
-            <div class="col-md-7">
-                <div class="text-left mt-5 pt-5">
-                    <h1 class="display-4" style="font-size: 64px;font-weight:700; color: black;">Give <span style="color: red;">Blood</span> Today Save a Life</h1>
-                    <p class="pt-4" style="font-size: 17px;">Donations are essential for trauma patients and people undergoing a variety of situations, including surgeries, transplants, chronic illnesses, blood disorders and cancer. Because over 90% of people who are eligible to donate do not, Baker says there's always a need for donors</p>
-                    
+<section class="hero-wrap" data-section="home">
+    <div class="parallax">
+        <div class="container">
+            <div class="row" style="height: 360px;">
+                <div class="col-md-7 pt-5">
+                    <div class="text-left mt-5 pt-5">
+                        <h1 class="display-4" style="font-size: 64px;font-weight:700; color: black;">
+                            Give
+                            <span style="color: red;">Blood</span> Today Save a Life
+                        </h1>
+                        <p class="pt-4" style="font-size: 17px;">Donations are essential for trauma patients and people undergoing a variety of situations, including surgeries, transplants, chronic illnesses, blood disorders and cancer. Because over 90% of people who are eligible to donate do not, Baker says there's always a need for donors</p>
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section class="hero-wrap my-section bg-light" id="about-section">
+<hr/>
+<section class="hero-wrap my-section" id="about-section">
+    <img class="notsticky" src="~/image/support.PNG" align="left" alt="Support">
     <div class="container">
-        <div class="row d-flex">
-            <div class="col-auto" style="height: 700px;">
-                <div class="text-center mt-5 pt-5">
-                    <h1 class="display-4">Blah blah</h1>
-                    <p>By giving blood you are saving...</p>
+        <div class="row d-flex">   
+            <div class="col-auto">
+                <div class="text-center mt-5">
+                    <h1 class="display-4">
+                        <b><span style="color:#0E88A4;">We are here for your Care</span></b>
+                    </h1>
+                    <p text-align="right">
+                        The Blood Donation System is aimed at maintaining all the information that relates to blood donors, different blood groups are available in each blood bank and help them manage in a better way.
+                        The blood donors can register to the system by entering their profile information, which further will be used for the database. In general, aim of this system is to provide the transperancy to this field, where ev erything can be organized and easily used.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<hr/>
+<section class="hero-wrap my-section part" id="donate-section">
+    <div class="container">
+        <div class="col-auto">
+            <div class="container1"><div class="centered">
+                    <h1>
+                        <b>Why Should I Donate?</b>
+                    </h1>
+                    <p style="color:black;">When you donate blood, you are giving back to your community. Donated blood benefits local patients in area hospitals. In addition, population growth, medical advances and increasing blood safety measures are causing an increase in local demand that exceeds our donation rates.</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="column" style="background-color:#aaa;">
+                        <h3>What are the benefits for me as a blood donor?</h3>
+                        <p>
+                            -You will receive a miniphysical. Your temperature, blood pressure, pulse and hemoglobin are checked to ensure it's safe for you to give blood.
+                        </p>
+                    </div>
+                    <div class="column" style="background-color:#bbb;">
+                        <h3>Who can donate?</h3>
+                        <p>
+                            Donors must weigh at least 110 pounds (about 50 kilograms) and be at least 17 years old (16 with written consent from a parent or guardian).
+                            During your donation appointment, you will complete a brief health questionnaire to make sure blood donation is safe for you and the recipient of your blood.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column" style="background-color:#ccc;">
+                        <h3>How long does donation take?</h3>
+                        <p>
+                            -Whole blood donation takes about 45 to 60 minutes.
+                            -Donating plasma or platelets takes about 1-2 hours.
+                            -Double red blood cell donation takes about 30 minutes longer than a whole blood donation.
+                            (While making a donation, you'll have access to wireless internet)
+                        </p>
+                    </div>
+                    <div class="column" style="background-color:#ddd;">
+                        <h3>How often may I donate?</h3>
+                        <p>
+                            -You can donate whole blood every 56 days, at minimum.
+                            -Plasma donors may donate as often as every 28 days.
+                            -Platelet donors may donate as frequently as every eight days, and up to 24 times in a 12-month period.
+                            -Double red cell donors may donate as often as every 168 days.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hero-wrap" id="contact-section" style="background-image: url('https://creativedigitalera.com/wp-content/uploads/2018/07/contact-us-background-image-1.jpg')">
+    <center>
+        <div class="container">
+            <div class="contact-form">
+                <h1>Contact Us</h1>
+                <div class="txtb">
+                    <label>Full Name:</label>
+                    <input type="text" name="" value="" placeholder="Enter Your Name" />
+                </div>
 
+                <div class="txtb">
+                    <label>Email:</label>
+                    <input type="email" name="" value="" placeholder="Enter Your Email" />
+                </div>
 
+                <div class="txtb">
+                    <label>Phone Number:</label>
+                    <input type="tel" name="" value="" placeholder="Enter Your Phone Number" />
+                </div>
 
+                <div class="txtb">
+                    <label>Message:</label>
+                    <textarea></textarea>
+                </div>
+
+                <div>
+                    <a class="btn">Send</a>
+                </div>
+            </div>
+        </div>
+    </center>   
+</section>

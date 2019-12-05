@@ -8,6 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Home\app\**" />
+    <Compile Remove="wwwroot\NewFolder1\**" />
+    <Content Remove="Views\Home\app\**" />
+    <Content Remove="wwwroot\NewFolder1\**" />
+    <EmbeddedResource Remove="Views\Home\app\**" />
+    <EmbeddedResource Remove="wwwroot\NewFolder1\**" />
+    <None Remove="Views\Home\app\**" />
+    <None Remove="wwwroot\NewFolder1\**" />
+    <TypeScriptCompile Remove="Views\Home\app\**" />
+    <TypeScriptCompile Remove="wwwroot\NewFolder1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Data\Migrations\20191114091043_initial-v1.cs" />
     <Compile Remove="Data\Migrations\20191114091043_initial-v1.Designer.cs" />
     <Compile Remove="Data\Migrations\20191117121905_DonationsModel-v1.cs" />
@@ -18,6 +31,10 @@
     <Compile Remove="Data\Migrations\20191127122608_donorIDchangedTOint-v1.Designer.cs" />
     <Compile Remove="Data\Migrations\20191127123526_changedIDtype-v2.cs" />
     <Compile Remove="Data\Migrations\20191127123526_changedIDtype-v2.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\image\donate.PNG" />
   </ItemGroup>
 
 
@@ -33,6 +50,10 @@
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.6" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="3.4.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
   </ItemGroup>
