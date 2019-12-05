@@ -1,7 +1,7 @@
 ﻿@{  
     ViewData["Title"] = "Home Page";
 }
-<section class="hero-wrap" data-section="home">
+<section class="hero-wrap" data-section="home" id="home-section">
     <div class="parallax">
         <div class="container">
             <div class="row" style="height: 360px;">
@@ -11,16 +11,16 @@
                             Give
                             <span style="color: red;">Blood</span> Today Save a Life
                         </h1>
-                        <p class="pt-4" style="font-size: 17px;">Donations are essential for trauma patients and people undergoing a variety of situations, including surgeries, transplants, chronic illnesses, blood disorders and cancer. Because over 90% of people who are eligible to donate do not, Baker says there's always a need for donors</p>
-
+                        <div class="mybox shadow-lg">
+                            <p class="lead">Donations are essential for trauma patients and people undergoing a variety of situations, including surgeries, transplants, chronic illnesses, blood disorders and cancer. Because over 90% of people who are eligible to donate do not, Baker says there's always a need for donors</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<hr/>
-<section class="hero-wrap my-section" id="about-section">
+<section class="hero-wrap my-section py-5" id="about-section">
     <img class="notsticky" src="~/image/support.PNG" align="left" alt="Support">
     <div class="container">
         <div class="row d-flex">   
@@ -38,11 +38,11 @@
         </div>
     </div>
 </section>
-<hr/>
-<section class="hero-wrap my-section part" id="donate-section">
+<section class="hero-wrap my-section py-5" id="donate-section" style="background-image: url('https://www.xmple.com/wallpaper/blue-gradient-grey-linear-1920x1080-c2-add8e6-d3d3d3-a-240-f-14.svg'); background-repeat: no-repeat;">
     <div class="container">
         <div class="col-auto">
-            <div class="container1"><div class="centered">
+            <div class="container1 pb-3">
+                <div class="centered">
                     <h1>
                         <b>Why Should I Donate?</b>
                     </h1>
@@ -50,50 +50,69 @@
                 </div>
             </div>
             <div class="container">
-                <div class="row">
-                    <div class="column" style="background-color:#aaa;">
-                        <h3>What are the benefits for me as a blood donor?</h3>
-                        <p>
-                            -You will receive a miniphysical. Your temperature, blood pressure, pulse and hemoglobin are checked to ensure it's safe for you to give blood.
-                        </p>
+                <div class="row py-3">
+                    <div class="col-6">
+                        <div class="card shadow-lg">
+                            <div class="card-body">
+                                <h4 class="card-title">What are the benefits for me as a blood donor?</h4>
+                                <p class="card-text">You will receive a miniphysical. Your temperature, blood pressure, pulse and hemoglobin are checked to ensure it's safe for you to give blood.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="column" style="background-color:#bbb;">
-                        <h3>Who can donate?</h3>
-                        <p>
-                            Donors must weigh at least 110 pounds (about 50 kilograms) and be at least 17 years old (16 with written consent from a parent or guardian).
-                            During your donation appointment, you will complete a brief health questionnaire to make sure blood donation is safe for you and the recipient of your blood.
-                        </p>
+                    
+                    <div class="col-6">
+                        <div class="card shadow-lg">
+                            <div class="card-body">
+                                <h4 class="card-title">Who can donate?</h4>
+                                <p class="card-text">
+                                    Donors must weigh at least 110 pounds (about 50 kilograms) and be at least 17 years old (16 with written consent from a parent or guardian).
+                                    During your donation appointment, you will complete a brief health questionnaire to make sure blood donation is safe for you and the recipient of your blood.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="column" style="background-color:#ccc;">
-                        <h3>How long does donation take?</h3>
-                        <p>
-                            -Whole blood donation takes about 45 to 60 minutes.
-                            -Donating plasma or platelets takes about 1-2 hours.
-                            -Double red blood cell donation takes about 30 minutes longer than a whole blood donation.
-                            (While making a donation, you'll have access to wireless internet)
-                        </p>
+                    <div class="col-6">
+                        <div class="card shadow-lg">
+                            <div class="card-body">
+                                <h4 class="card-title">How long does donation take?</h4>
+                                <p class="card-text">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Whole blood donation takes about 45 to 60 minutes. </li>
+                                        <li class="list-group-item">Donating plasma or platelets takes about 1-2 hours.</li>
+                                        <li class="list-group-item">Double red blood cell donation takes about 30 minutes longer than a whole blood donation.</li>
+                                        <li class="list-group-item">While making a donation, you'll have access to wireless internet.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="column" style="background-color:#ddd;">
-                        <h3>How often may I donate?</h3>
-                        <p>
-                            -You can donate whole blood every 56 days, at minimum.
-                            -Plasma donors may donate as often as every 28 days.
-                            -Platelet donors may donate as frequently as every eight days, and up to 24 times in a 12-month period.
-                            -Double red cell donors may donate as often as every 168 days.
-                        </p>
+                    <div class="col-6">
+                        <div class="card shadow-lg">
+                            <div class="card-body">
+                                <h4 class="card-title">How often may I donate?</h4>
+                                <p class="card-text">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">You can donate whole blood every 56 days, at minimum. </li>
+                                        <li class="list-group-item">Plasma donors may donate as often as every 28 days.</li>
+                                        <li class="list-group-item">Platelet donors may donate as frequently as every eight days, and up to 24 times in a 12-month period.</li>
+                                        <li class="list-group-item">Double red cell donors may donate as often as every 168 days.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section class="hero-wrap" id="contact-section" style="background-image: url('https://creativedigitalera.com/wp-content/uploads/2018/07/contact-us-background-image-1.jpg')">
+<section class="hero-wrap py-5" id="contact-section" style="background-image: url('https://creativedigitalera.com/wp-content/uploads/2018/07/contact-us-background-image-1.jpg')">
     <center>
         <div class="container">
             <div class="contact-form">
-                <h1>Contact Us</h1>
+                <h1 class="display-4" style="color:#0E88A4;">Contact Us</h1>
                 <div class="txtb">
                     <label>Full Name:</label>
                     <input type="text" name="" value="" placeholder="Enter Your Name" />
@@ -115,7 +134,7 @@
                 </div>
 
                 <div>
-                    <a class="btn">Send</a>
+                    <a class="btn" id="sendBtn">Send</a>
                 </div>
             </div>
         </div>

@@ -35,11 +35,11 @@
                         <div class="row d-flex">
                             <div class="col-md pr-4 d-flex topper align-items-center">
                                 <div class="icon mr-2 d-flex justify-content-center align-items-center"><i class='fas fa-phone' style="font-size:14px; color:white;"></i></div>
-                                <span class="text-white font-weight-bold">+1235 2355 98</span>
+                                <span class="text-white font-weight-bold">+996 123123123123</span>
                             </div>
                             <div class="col-md pr-4 d-flex topper align-items-center">
                                 <div class="icon mr-2 d-flex justify-content-center align-items-center"><i class="fab fa-telegram-plane" style="font-size:16px; color:white;"></i></div>
-                                <span class="text-white font-weight-bold">email@email.com</span>
+                                <span class="text-white font-weight-bold">blooddonation@gmail.com</span>
                             </div>
                             <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
                                 @*<p class="mb-0 register-link">*@
@@ -66,21 +66,21 @@
                         @*<partial name="_LoginPartial" />*@
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link text-dark" id="homeLink" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                <a class="nav-link text-dark" id="homeLink" href="/#home-section">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" id="aboutLink" href="#about-section">About</a>
+                                <a class="nav-link text-dark" id="aboutLink" href="/#about-section">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" id="donateLink" asp-area="" asp-controller="Home" asp-action="">Donate</a>
+                                <a class="nav-link text-dark" id="donateLink" href="/#donate-section">Why Donate?</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" id="contactLink" asp-area="" asp-controller="Home" asp-action="">Contact</a>
+                                <a class="nav-link text-dark" id="contactLink" href="/#contact-section">Contact Us</a>
                             </li>
                             @if (SignInManager.IsSignedIn(User)){
                                 <li class="nav-item">
                                     @*<a class="nav-link text-dark" asp-area=""></a>*@
-                                    <a class="btn btn-outline-primary menu-btn" asp-controller="DonationDashboard" asp-action="Index">Donation Dashboard</a>
+                                    <a class="btn btn-primary menu-btn" asp-controller="DonationDashboard" asp-action="Index">Donation Dashboard</a>
                                 </li>
                              }
                         </ul>
@@ -106,10 +106,10 @@
                 <div class="col-lg-3 footer-links text-right">
                     <h4>Useful Links</h4>
                     <ul>
-                        <li><a href="#">Link1</a></li>
-                        <li><a href="#">Link2</a></li>
-                        <li><a href="#">Link3</a></li>
-                        <li><a href="#">Link4</a></li>
+                        <li><a href="/#home-section">Home</a></li>
+                        <li><a href="/#about-section">About</a></li>
+                        <li><a href="/#donate-section">Why Donate?</a></li>
+                        <li><a href="/Home/Privacy">Privacy</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-5 footer-contact text-right" >
@@ -119,7 +119,7 @@
                         Naryn, 722918<br>
                         Kyrgyzstan<br>
                         <strong>Phone:</strong> +996 123123123123<br>
-                        <strong>Email:</strong> blooddonation@gmail.com<br>
+                        <strong>Email:</strong> blooddonation@gmail.com <br>
                     </p>
                     <div class="social-links">
                         <a href="https://twitter.com" class="twitter"><i class="fab fa-twitter"></i></a>

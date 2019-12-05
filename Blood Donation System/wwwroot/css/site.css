@@ -141,9 +141,7 @@ img.notsticky {
     position: relative;
     text-align:center;
     color: red;
-    font-size: 20px;
-    font-family: Cambria, Arial, sans-serif;
-    font-weight: 800;
+    font-size: 20px;  
     margin:20px;
     /*top: 50%;
     left: 50%;
@@ -153,7 +151,7 @@ img.notsticky {
 .container1 {
     margin-left: 0px;
     background-size: cover;
-    border-image-width: 900px;
+    /*border-image-width: 900px;*/
 }
 
 .container:hover .overlay {
@@ -174,7 +172,7 @@ img.notsticky {
     float: left;
     width: 350px;
     height: 250px;
-    padding: 10px;
+    padding: 20px;
     margin: 5px;
     font-size-adjust:inherit;
 }
@@ -338,10 +336,6 @@ img.notsticky {
     text-align: center;
 }
 
-.contact-form h1{
-    margin-top: 0;
-    font-weight: 200;
-}
 
 .txtb{
     border: 1px solid gray;
@@ -367,7 +361,7 @@ img.notsticky {
     margin-top: 6px;
 }
 
-.btn {
+#sendBtn {
     display: block;
     background: #004a99;
     padding: 14px 0;
@@ -377,4 +371,10 @@ img.notsticky {
     margin-top: 8px;
     width: 100%;
     
+}
+
+.mybox {
+    background-color: rgba(225,225,225,.5);
+    padding: 10px;
+    border-radius: 25px;
 }
