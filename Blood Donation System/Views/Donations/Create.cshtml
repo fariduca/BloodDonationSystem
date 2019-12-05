@@ -1,0 +1,72 @@
+﻿@model Blood_Donation_System.Models.Donations
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="mt-5 pt-5">
+        <h1>Create</h1>
+
+        <h4>Donations</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-4 shadow">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="DonationCity" class="control-label"></label>
+                        <input asp-for="DonationCity" class="form-control" required />
+                        <span asp-validation-for="DonationCity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Amount" class="control-label"></label>
+                        <input asp-for="Amount" class="form-control" required />
+                        <span asp-validation-for="Amount" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DonatonDate" class="control-label"></label>
+                        <input asp-for="DonatonDate" class="form-control" type="date" value="@ViewBag.today" required />
+                        <span asp-validation-for="DonatonDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CurrentDonorId" class="control-label"></label>
+                        <select asp-for="CurrentDonorId" class="form-control" asp-items="ViewBag.CurrentDonorId" id="donorId" required></select>
+                    </div>
+                    @*<div class="form-group">
+                        <label asp-for="Donor.FullName" class="control-label"></label>
+                        <input id="donorName" class="form-control" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Donor.City" class="control-label"></label>
+                        <input id="donorCity" class="form-control" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Last Donation Date</label>
+                        <input id="lastDonation" class="form-control" readonly />
+                    </div>*@
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+                @if (ViewBag.earlyDonationWarning)
+                {
+                    <div class="lead text-danger">You are not eligible to donate blood. Your last donation was on @ViewBag.lastD. At least 30 days should pass from your last donation for you to be eligible.</div>
+                }
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/notHome.js"></script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

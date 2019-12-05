@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Blood_Donation_System.Models.DonorsModel>
+﻿@model IEnumerable<Blood_Donation_System.Models.Donors>
 
 @{
     ViewData["Title"] = "Index";
@@ -7,26 +7,33 @@
 
 <div class="container">
     <div class="pt-5 mt-5">
-        <h1>Index</h1>
+        <h1>Donors List</h1>
 
         <p>
-            <a asp-action="Create">Create New</a>
+            <a asp-action="Create">Add New</a>
         </p>
-        <table class="table">
+        <table class="table table-striped shadow-lg">
             <thead>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.Name)
+                        @Html.DisplayNameFor(model => model.DonorId)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Address)
+                        @Html.DisplayNameFor(model => model.FullName)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Phone_Number)
+                        @Html.DisplayNameFor(model => model.Gender)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Blood_Type)
+                        @Html.DisplayNameFor(model => model.BloodGroup)
                     </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Weight)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Disease)
+                    </th>
+
                     <th></th>
                 </tr>
             </thead>
@@ -37,21 +44,27 @@
                     {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Name)
+                                @Html.DisplayFor(modelItem => item.DonorId)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Address)
+                                @Html.DisplayFor(modelItem => item.FullName)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Phone_Number)
+                                @Html.DisplayFor(modelItem => item.Gender)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Blood_Type)
+                                @Html.DisplayFor(modelItem => item.BloodGroup)
                             </td>
                             <td>
-                                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                @Html.DisplayFor(modelItem => item.Weight)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Disease)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.DonorId">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.DonorId">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.DonorId">Delete</a>
                             </td>
                         </tr>
                     }
@@ -60,3 +73,5 @@
         </table>
     </div>
 </div>
+
+<script src="~/js/notHome.js"></script>

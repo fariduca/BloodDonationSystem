@@ -62,18 +62,19 @@ body {
 }
 
 .navbar {
-    position: relative;
+    position: absolute;
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.5);
 }
 
 .my-navbar {
-    position: absolute;
+    /*position: absolute;*/
     right: 0;
     left: 0;
-    top: 33px;
+    top: 0;
     z-index: 3;
     padding-top: 15px;
+    margin-top: 40px;
 }
 
 a.nav-link {
@@ -84,11 +85,31 @@ a.nav-link {
     margin: 0 15px;
 }
 
-div.py-1.bg-info.top {
-    position: relative;
-    height: 41px;
+a.menu-btn {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
 }
 
+.top-top {
+    position:relative;
+    width: 100%;
+}
+
+div.pb-1.bg-primary.top {
+    height: 40px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-top: 0px;
+}
+
+.sticky + .main {
+    padding-top: 60px;
+}
 
 .parallax {
     /* The image used */
@@ -357,4 +378,3 @@ img.notsticky {
     width: 100%;
     
 }
-

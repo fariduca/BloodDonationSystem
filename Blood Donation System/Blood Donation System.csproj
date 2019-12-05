@@ -23,8 +23,8 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20191114091043_initial-v1.cs" />
     <Compile Remove="Data\Migrations\20191114091043_initial-v1.Designer.cs" />
-    <Compile Remove="Data\Migrations\20191117121905_donorsmodel-v1.cs" />
-    <Compile Remove="Data\Migrations\20191117121905_donorsmodel-v1.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191117121905_DonationsModel-v1.cs" />
+    <Compile Remove="Data\Migrations\20191117121905_DonationsModel-v1.Designer.cs" />
     <Compile Remove="Data\Migrations\20191127121948_donorIDchangedTOint-v1.cs" />
     <Compile Remove="Data\Migrations\20191127121948_donorIDchangedTOint-v1.Designer.cs" />
     <Compile Remove="Data\Migrations\20191127122608_donorIDchangedTOint-v1.cs" />

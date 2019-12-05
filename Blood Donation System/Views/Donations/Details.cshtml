@@ -1,0 +1,77 @@
+﻿@model Blood_Donation_System.Models.Donations
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="mt-5 pt-5">
+
+        <h1>Details</h1>
+
+        <div>
+            <h4>Donations</h4>
+            <hr />
+            <dl class="row shadow p-3">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.DonationId)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.DonationId)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.DonationCity)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.DonationCity)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Amount)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Amount)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.DonatonDate)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.DonatonDate)
+                </dd>
+                <dd class="col-sm-12">
+                    <hr />
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Donor)
+                </dt>
+                <dd class="col-sm-10">
+                    <a href="~/Records/Details/@Html.DisplayFor(model => model.Donor.DonorId)">@Html.DisplayFor(model => model.Donor.DonorId)</a>
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Donor.FullName)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Donor.FullName)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Donor.City)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Donor.City)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Donor.BloodGroup)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Donor.BloodGroup)
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.DonationId">Edit</a> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/notHome.js"></script>

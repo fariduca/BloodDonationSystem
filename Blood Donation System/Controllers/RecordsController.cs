@@ -22,8 +22,9 @@ namespace Blood_Donation_System.Controllers
         // GET: Records
         public async Task<IActionResult> Index()
         {
-            List<DonorsModel> records = await _context.DonorsModel.ToListAsync();
+            List<Donors> records = await _context.Donors.ToListAsync();
             return View(records);
+           
         }
 
         // GET: Records/Details/5
@@ -34,7 +35,7 @@ namespace Blood_Donation_System.Controllers
                 return NotFound();
             }
 
-            var record = await _context.DonorsModel.FindAsync(id);
+            var record = await _context.Donors.FindAsync(id);
             if (record == null)
             {
                 return NotFound();
@@ -52,12 +53,13 @@ namespace Blood_Donation_System.Controllers
         // POST: Records/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Address,Phone_Number,Blood_Type")] DonorsModel records)
+        public async Task<IActionResult> Create([Bind("")] Donors records, string radioGender)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
+                    records.Gender = radioGender;
                     _context.Add(records);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
@@ -78,7 +80,7 @@ namespace Blood_Donation_System.Controllers
                 return NotFound();
             }
 
-            var record = await _context.DonorsModel.FindAsync(id);
+            var record = await _context.Donors.FindAsync(id);
             if (record == null)
             {
                 return NotFound();
@@ -90,34 +92,64 @@ namespace Blood_Donation_System.Controllers
         // POST: Records/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Edit(int id, [Bind("")] Donors records, string radioGender)
         {
-            try
+            if (id != records.DonorId)
             {
-                // TODO: Add update logic here
+                return NotFound();
+            }
 
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    records.Gender = radioGender;
+                    _context.Update(records);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!RecordsExists(records.DonorId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
                 return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
+            return View(records);
         }
 
         // GET: Records/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var record = await _context.Donors.FindAsync(id);
+            if (record == null)
+            {
+                return NotFound();
+            }
+
+            return View(record);
         }
 
         // POST: Records/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<IActionResult> Delete(int id,Donors record)
         {
             try
             {
-                // TODO: Add delete logic here
+                //var record = _context.Donors.Where(m => m.DonorId == id);
+                _context.Remove(record);
+                await _context.SaveChangesAsync();
 
                 return RedirectToAction(nameof(Index));
             }
@@ -125,6 +157,11 @@ namespace Blood_Donation_System.Controllers
             {
                 return View();
             }
+        }
+
+        private bool RecordsExists(int id)
+        {
+            return _context.Donors.Any(e => e.DonorId == id);
         }
     }
 }

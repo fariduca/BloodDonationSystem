@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blood_Donation_System.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191117122536_donorsmodel-v1")]
-    partial class donorsmodelv1
+    [Migration("20191203114703_newDB-v1")]
+    partial class newDBv1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,22 +21,54 @@ namespace Blood_Donation_System.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Blood_Donation_System.Models.DonorsModel", b =>
+            modelBuilder.Entity("Blood_Donation_System.Models.Donations", b =>
                 {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("DonationId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Address");
+                    b.Property<int>("Amount");
 
-                    b.Property<string>("Blood_Type");
+                    b.Property<int>("CurrentDonorId");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("DonationCity");
 
-                    b.Property<string>("Phone_Number");
+                    b.Property<string>("DonatonDate");
 
-                    b.HasKey("Id");
+                    b.HasKey("DonationId");
 
-                    b.ToTable("DonorsModel");
+                    b.HasIndex("CurrentDonorId");
+
+                    b.ToTable("Donations");
+                });
+
+            modelBuilder.Entity("Blood_Donation_System.Models.Donors", b =>
+                {
+                    b.Property<int>("DonorId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("BloodGroup");
+
+                    b.Property<string>("City");
+
+                    b.Property<string>("Disease");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("FullName");
+
+                    b.Property<string>("Gender");
+
+                    b.Property<string>("Occupation");
+
+                    b.Property<string>("PhoneNumber");
+
+                    b.Property<string>("Weight");
+
+                    b.HasKey("DonorId");
+
+                    b.ToTable("Donors");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -202,6 +234,14 @@ namespace Blood_Donation_System.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("Blood_Donation_System.Models.Donations", b =>
+                {
+                    b.HasOne("Blood_Donation_System.Models.Donors", "Donor")
+                        .WithMany("Donations")
+                        .HasForeignKey("CurrentDonorId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
