@@ -58,7 +58,7 @@ body {
 
 .hero-wrap {
     width: 100%;
-    min-height: 500px;
+    min-height: 600px;
     position: inherit;
     background-size: cover;
     background-repeat: no-repeat;
@@ -378,7 +378,7 @@ img.notsticky {
 }
 
 .mybox {
-    background-color: rgba(225,225,225,.5);
+    background-color: rgba(225,225,225,.65);
     padding: 10px;
     border-radius: 15px;
 }
