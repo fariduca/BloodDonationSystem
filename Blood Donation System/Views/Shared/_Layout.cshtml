@@ -17,6 +17,9 @@
     </environment>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+      
+    </style>
 </head>
 <body>
     <div class="pb-1 bg-primary top">
@@ -83,11 +86,50 @@
         </main>
     @*</div>*@
 
-    <footer class="border-top footer text-muted">
+<footer id="footer">
+    <div class="footer-top">
         <div class="container">
-            &copy; 2019 - Blood Donation System - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 footer-info">
+                    <h3>Blood Donation System</h3>
+                </div>
+                <div class="col-lg-3 footer-links text-right">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="#">Link1</a></li>
+                        <li><a href="#">Link2</a></li>
+                        <li><a href="#">Link3</a></li>
+                        <li><a href="#">Link4</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 footer-contact text-right" >
+                    <h4>Contact Us</h4>
+                    <p>
+                        310 Lenin Street<br>
+                        Naryn, 722918<br>
+                        Kyrgyzstan<br>
+                        <strong>Phone:</strong> +996 123123123123<br>
+                        <strong>Email:</strong> blooddonation@gmail.com<br>
+                    </p>
+                    <div class="social-links">
+                        <a href="https://twitter.com" class="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" class="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com" class="facebook"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+            </div>
         </div>
-    </footer>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright<strong> Blood Donation System</strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            Designed by<a href="#"> Blood Donation System</a>
+        </div>
+    </div>
+</footer>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
