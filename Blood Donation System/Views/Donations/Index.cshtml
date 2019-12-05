@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Blood_Donation_System.Models.Donations>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="mt-5 pt-5">
+        <h1>Donations</h1>
+
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+        <table class="table table-striped shadow-lg">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DonationId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DonationCity)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Amount)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DonatonDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Donor)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Donor.FullName)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DonationId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DonationCity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Amount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DonatonDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Donor.DonorId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Donor.FullName)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.DonationId">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.DonationId">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.DonationId">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="~/js/notHome.js"></script>

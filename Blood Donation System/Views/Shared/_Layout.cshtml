@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using Blood_Donation_System.Areas.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -19,68 +24,73 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
-    <div class="pb-1 bg-primary top">
-        <div class="container">
-            <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
-                <div class="col-lg-12 d-block">
-                    <div class="row d-flex">
-                        <div class="col-md pr-4 d-flex topper align-items-center">
-                            <div class="icon mr-2 d-flex justify-content-center align-items-center"><i class='fas fa-phone' style="font-size:14px; color:white;"></i></div>
-                            <span class="text-white font-weight-bold">+1235 2355 98</span>
-                        </div>
-                        <div class="col-md pr-4 d-flex topper align-items-center">
-                            <div class="icon mr-2 d-flex justify-content-center align-items-center"><i class="fab fa-telegram-plane" style="font-size:16px; color:white;"></i></div>
-                            <span class="text-white font-weight-bold">email@email.com</span>
-                        </div>
-                        <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
-                            @*<p class="mb-0 register-link">*@
+    <div class="top-top">
+        <div class="pb-1 bg-primary top">
+            <div class="container">
+                <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
+                    <div class="col-lg-12 d-block">
+                        <div class="row d-flex">
+                            <div class="col-md pr-4 d-flex topper align-items-center">
+                                <div class="icon mr-2 d-flex justify-content-center align-items-center"><i class='fas fa-phone' style="font-size:14px; color:white;"></i></div>
+                                <span class="text-white font-weight-bold">+1235 2355 98</span>
+                            </div>
+                            <div class="col-md pr-4 d-flex topper align-items-center">
+                                <div class="icon mr-2 d-flex justify-content-center align-items-center"><i class="fab fa-telegram-plane" style="font-size:16px; color:white;"></i></div>
+                                <span class="text-white font-weight-bold">email@email.com</span>
+                            </div>
+                            <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
+                                @*<p class="mb-0 register-link">*@
                                 @*<a href="#" class="mr-3">Sign Up</a>*@
                                 @*<a href="#">Sign In</a>*@
 
-                            @*</p>*@
-                            <partial name="_LoginPartial" />
+                                @*</p>*@
+                                <partial name="_LoginPartial" />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <header>
-        <nav class="navbar my-navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mt-2">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Blood Donation System</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse align-self-end">
-                    @*<partial name="_LoginPartial" />*@
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="#about-section">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="">Donate</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="">Contact</a>
-                        </li>
-                    </ul>
+        <header>
+            <nav class="navbar my-navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow" id="nav">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Blood Donation System</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse align-self-end">
+                        @*<partial name="_LoginPartial" />*@
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" id="homeLink" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" id="aboutLink" href="#about-section">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" id="donateLink" asp-area="" asp-controller="Home" asp-action="">Donate</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" id="contactLink" asp-area="" asp-controller="Home" asp-action="">Contact</a>
+                            </li>
+                            @if (SignInManager.IsSignedIn(User)){
+                                <li class="nav-item">
+                                    @*<a class="nav-link text-dark" asp-area=""></a>*@
+                                    <a class="btn btn-outline-primary menu-btn" asp-controller="DonationDashboard" asp-action="Index">Donation Dashboard</a>
+                                </li>
+                             }
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
+    </div>
     @*<div class="container">*@
-        @*<partial name="_CookieConsentPartial" />*@
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    @*<partial name="_CookieConsentPartial" />*@
+    <main role="main" class="main pb-3">
+        @RenderBody()
+    </main>
     @*</div>*@
 
     <footer class="border-top footer text-muted">
@@ -107,6 +117,7 @@
                 integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
         </script>
     </environment>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)

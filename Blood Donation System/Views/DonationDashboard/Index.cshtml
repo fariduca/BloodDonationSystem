@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="mt-5 pt-5">
+        <section class="hero-wrap">
+            <div class="card-deck">
+
+                <div class="card shadow">
+                    <a href="~/Records" style="text-decoration:none;">
+                        <img src="https://healthblog.uofmhealth.org/sites/consumer/files/2017-06/UMH_OrganDonor-KV%402x2_0.jpg" class="card-img-top" alt="" />
+                        <div class="card-body">
+                            <h2 class="card-title">New Donor Record</h2>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card shadow">
+                    <a href="~/Donations" style="text-decoration:none;">
+                        <img src="https://www.nextavenue.org/wp-content/uploads/2019/01/What-You-Need-to-Know-About-Donating-Blood_222930217-750x484.png" class="card-img-top" alt="" />
+                        <div class="card-body">
+                            <h2 class="card-title">New Donation Record</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="hero-wrap">
+            <table class="table table-striped shadow-lg">
+                <thead>
+                    <tr>
+                        <th>Blood Group</th>
+                        <th>Amount in Blood Bank</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var data in ViewBag.bloodBank)
+                    {
+                        <tr>
+                            <td>
+                                @data
+                            </td>
+                            <td>
+                                @data
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+    </div>
+</div>
+
+<script src="~/js/notHome.js"></script>
