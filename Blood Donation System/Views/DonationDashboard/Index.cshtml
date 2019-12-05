@@ -33,7 +33,7 @@
                 <thead>
                     <tr>
                         <th>Blood Group</th>
-                        <th>Amount in Blood Bank</th>
+                        <th>Amount in Blood Bank (liters)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,10 +41,10 @@
                     {
                         <tr>
                             <td>
-                                @data
+                                @data.BloodGroup
                             </td>
                             <td>
-                                @data
+                                @data.Amount
                             </td>
                         </tr>
                     }

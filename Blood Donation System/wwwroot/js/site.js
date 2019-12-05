@@ -4,16 +4,13 @@
 window.onscroll = function () { myFunction(); }
 var navbar = document.getElementById('nav');
 var sticky = navbar.offsetTop;
-var homeLink = document.getElementById('homeLink');
 
 function myFunction() {
     if (window.pageYOffset >= sticky) {
         navbar.classList.add("sticky");
-        homeLink.href = "#home-section";
         navbar.classList.add('bg-light');
     } else {
         navbar.classList.remove("sticky");
         navbar.classList.remove('bg-light');
-        homeLink.href = "/";
     }
 }

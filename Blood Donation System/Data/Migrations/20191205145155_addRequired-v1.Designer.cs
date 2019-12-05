@@ -4,14 +4,16 @@ using Blood_Donation_System.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Blood_Donation_System.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191205145155_addRequired-v1")]
+    partial class addRequiredv1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,7 +64,8 @@ namespace Blood_Donation_System.Data.Migrations
                     b.Property<string>("FullName")
                         .IsRequired();
 
-                    b.Property<string>("Gender");
+                    b.Property<string>("Gender")
+                        .IsRequired();
 
                     b.Property<string>("Occupation");
 

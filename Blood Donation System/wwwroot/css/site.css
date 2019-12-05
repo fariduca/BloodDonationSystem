@@ -23,6 +23,10 @@ html {
   }
 }
 
+.main {
+    min-height: 600px;
+}
+
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
@@ -124,7 +128,7 @@ div.pb-1.bg-primary.top {
 }
 
 #about-section{
-    text-align:right;
+    
     position:relative;
     padding-left:20px;
 }
@@ -376,5 +380,5 @@ img.notsticky {
 .mybox {
     background-color: rgba(225,225,225,.5);
     padding: 10px;
-    border-radius: 25px;
+    border-radius: 15px;
 }

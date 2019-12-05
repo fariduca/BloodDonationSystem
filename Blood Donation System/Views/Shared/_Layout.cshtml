@@ -22,9 +22,6 @@
     </environment>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <style>
-      
-    </style>
 </head>
 <body>
     <div class="top-top">
@@ -79,7 +76,6 @@
                             </li>
                             @if (SignInManager.IsSignedIn(User)){
                                 <li class="nav-item">
-                                    @*<a class="nav-link text-dark" asp-area=""></a>*@
                                     <a class="btn btn-primary menu-btn" asp-controller="DonationDashboard" asp-action="Index">Donation Dashboard</a>
                                 </li>
                              }
@@ -159,7 +155,7 @@
                 integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
         </script>
     </environment>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)

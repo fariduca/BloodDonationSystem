@@ -24,10 +24,15 @@ namespace Blood_Donation_System.Controllers
             //List<string> bloodGroups = _context.Donations.Select(c => c.Donor.BloodGroup).Distinct().ToList();
             //_context.Donations.Where(c => c.Donor.BloodGroup == bloodGroups[0]).Select(c => c.Amount);
 
-            var bloodBank = _context.Donations.GroupBy(e => e.Donor.BloodGroup).Select(a => new { Amount = a.Sum(b => b.Amount), BloodGroup = a.Key });
-            ViewBag.bloodBank = await bloodBank.ToListAsync();
+            var donations = _context.Donations;
+            var donors = _context.Donors;
+
+            var bloodBank = donations.GroupBy(e => e.Donor.BloodGroup).Select(a => new BloodBank { Amount = a.Sum(b => b.Amount), BloodGroup = a.Key });
+            ViewBag.bloodBank = bloodBank;
 
             return View();
         }
     }
+
+    
 }

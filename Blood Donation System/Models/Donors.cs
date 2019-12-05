@@ -36,7 +36,6 @@ namespace Blood_Donation_System.Models
         [Required, Display(Name = "Blood Group")]
         public string BloodGroup { get; set; }
 
-        [Required]
         public string Gender { get; set; }
 
         public string Occupation { get; set; }
@@ -62,5 +61,11 @@ namespace Blood_Donation_System.Models
         public int CurrentDonorId { get; set; }
         [Display(Name = "Donor ID")]
         public Donors Donor { get; set; }
+    }
+
+    public class BloodBank
+    {
+        public int Amount { get; set; }
+        public string BloodGroup { get; set; }
     }
 }
